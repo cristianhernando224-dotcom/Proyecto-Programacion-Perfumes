@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Herrera Perfumes, administrador de catálogo e inventario de fragancias.">
+  <title>Herrera Perfumes Manager</title>
+  <link rel="stylesheet" href="css/estilos.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <script src="js/productos.js" defer></script>
+  <script src="js/app.js" defer></script>
+  <script src="js/inventario.js" defer></script>
+  <script src="js/validaciones.js" defer></script>
+</head>
+
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">H</span><span><b>HERRERA</b><small>PERFUMES MANAGER</small></span>
+      </div>
+      <p class="nav-label">MENÚ PRINCIPAL</p>
+      <nav>
+        <button class="nav-button active" data-view="home"><span>⌂</span> Inicio</button>
+        <button class="nav-button" data-view="inventory"><span>▤</span> Inventario <em id="nav-count">14</em></button>
+        <button class="nav-button" data-view="add"><span>＋</span> Agregar perfume</button>
+        <button class="nav-button" data-view="categories"><span>◇</span> Categorías</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <p>SISTEMA DE GESTIÓN</p><small>Herrera Perfumes · 2026</small>
+        <div class="profile"><span>CQ</span>
+          <div><b>Administrador</b><small>Gestión de catálogo</small></div>
+        </div>
+      </div>
+    </aside>
+    <header class="mobile-header"><button id="mobile-toggle" aria-label="Abrir menú">☰</button><b>HERRERA
+        <span>PERFUMES</span></b></header>
+    <div class="mobile-nav" id="mobile-nav" hidden>
+      <button data-view="home">Inicio</button><button data-view="inventory">Inventario</button><button
+        data-view="add">Agregar perfume</button><button data-view="categories">Categorías</button>
+    </div>
+    <main id="main-content">
+      <section class="view home-view" data-section="home">
+        <div class="hero">
+          <div class="hero-copy"><span class="eyebrow">GESTIÓN DE FRAGANCIAS · 2026</span>
+            <h1>El arte de<br>los <i>perfumes.</i></h1>
+            <p>Una colección cuidadosamente seleccionada. Administra cada esencia, cada detalle y cada existencia desde
+              un solo lugar.</p>
+            <div class="hero-actions"><button class="btn btn-primary" data-view="inventory">Ver inventario
+                ↗</button><button class="text-link" data-view="add">Agregar perfume</button></div>
+          </div>
+          <div class="hero-product">
+            <div class="gold-orbit"></div><img src="img/catalog/khamrah.jpg" alt="Perfume Khamrah Lattafa">
+            <div class="hero-caption"><span>FRAGANCIA DESTACADA</span><b>Khamrah Lattafa</b><small>Lattafa ·
+                $120.000</small></div>
+          </div>
+        </div>
+        <div class="dashboard-block">
+          <div class="section-head">
+            <div><span class="eyebrow">RESUMEN GENERAL</span>
+              <h2>Bienvenido a Herrera Perfumes</h2>
+              <p>Administra tu colección de fragancias de manera sencilla.</p>
+            </div><button class="btn btn-primary" data-view="add">＋ Agregar perfume</button>
+          </div>
+          <div class="stats">
+            <article class="stat"><span>Productos</span><strong id="stat-products">14</strong><small>Catálogo de
+                ejemplo</small></article>
+            <article class="stat"><span>Stock bajo</span><strong id="stat-low">4</strong><small>Requieren
+                atención</small></article>
+            <article class="stat"><span>Categorías</span><strong>4</strong><small>Colecciones</small></article>
+            <article class="stat stat-wide"><span>Valor del inventario</span><strong
+                id="stat-value">$0</strong><small>Valor estimado del stock</small></article>
+          </div>
+          <div class="recent-head">
+            <div>
+              <h3>Productos destacados</h3>
+              <p>Algunas fragancias del catálogo</p>
+            </div><button class="text-link" data-view="inventory">Ver todos →</button>
+          </div>
+          <div class="product-grid" id="recent-grid"></div>
+        </div>
+      </section>
+      <section class="view page" data-section="inventory" hidden>
+        <div class="page-title">
+          <div><span class="eyebrow">CATÁLOGO · REFERENCIAS</span>
+            <h1>Inventario de perfumes</h1>
+            <p>Consulta y administra los productos de Herrera Perfumes.</p>
+          </div><button class="btn btn-primary" data-view="add">＋ Nuevo perfume</button>
+        </div>
+        <div class="filter-panel"><label class="search-box">⌕ <input id="search" type="search"
+              placeholder="Buscar por nombre, marca o categoría..."><button id="clear-search"
+              aria-label="Limpiar búsqueda">×</button></label>
+          <div class="filters"><label class="select-field"><span>Categoría</span><select id="filter-category">
+                <option>Todos</option>
+                <option>Caballero</option>
+                <option>Dama</option>
+                <option>Unisex</option>
+                <option>Sets</option>
+              </select></label><label class="select-field"><span>Marca</span><select id="filter-brand">
+                <option>Todas</option>
+                <option>Lattafa</option>
+                <option>Armaf</option>
+                <option>Paco Rabanne</option>
+                <option>Jean Paul Gaultier</option>
+                <option>Valentino</option>
+                <option>Carolina Herrera</option>
+              </select></label><label class="select-field"><span>Estado</span><select id="filter-status">
+                <option>Todos</option>
+                <option>Disponible</option>
+                <option>Stock bajo</option>
+                <option>Agotado</option>
+              </select></label><label class="select-field"><span>Ordenar por</span><select id="sort">
+                <option>Nombre</option>
+                <option>Precio menor</option>
+                <option>Precio mayor</option>
+                <option>Stock</option>
+              </select></label></div>
+        </div>
+        <p class="result-label" id="result-label"></p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>PRODUCTO</th>
+                <th>CATEGORÍA</th>
+                <th>AROMA</th>
+                <th>PRECIO</th>
+                <th>STOCK</th>
+                <th>STOCK MÍNIMO</th>
+                <th>ESTADO</th>
+                <th>ACCIONES</th>
+              </tr>
+            </thead>
+            <tbody id="inventory-rows"></tbody>
+          </table>
+        </div>
+        <div id="empty-state" class="empty" hidden>
+          <h3>No encontramos perfumes</h3>
+          <p>Prueba cambiando la búsqueda o los filtros.</p>
+        </div>
+      </section>
+      <section class="view page" data-section="add" hidden><button class="back-link" data-view="inventory">← Volver al
+          inventario</button>
+        <div class="page-title">
+          <div><span class="eyebrow">CATÁLOGO · NUEVA REFERENCIA</span>
+            <h1 id="form-title">Agregar nuevo perfume</h1>
+            <p>Registra la información del nuevo producto para tu inventario.</p>
+          </div>
+        </div>
+        <form id="product-form" novalidate>
+          <div class="form-section image-section">
+            <div class="section-number">01</div>
+            <div>
+              <h2>Imagen del perfume</h2>
+              <p>Agrega una fotografía para identificar el producto.</p>
+            </div>
+            <div class="image-upload"><label for="field-image" class="upload-drop" id="image-preview"><span
+                  class="upload-plus">＋</span><b>Subir imagen</b><small>Selecciona una imagen desde tu
+                  equipo</small></label><input id="field-image" type="file" accept="image/*" hidden><small
+                id="image-name">No se ha seleccionado una imagen.</small></div>
+          </div>
+          <div class="form-section">
+            <div class="section-number">02</div>
+            <div>
+              <h2>Información básica</h2>
+              <p>Nombre, marca y clasificación del perfume.</p>
+            </div>
+            <div class="form-grid"><label class="field"><span>Nombre del perfume *</span><input name="name"
+                  id="field-name" required maxlength="80"><small class="field-error-text"
+                  data-error="name"></small></label><label class="field"><span>Marca *</span><input name="brand"
+                  id="field-brand" required maxlength="60"><small class="field-error-text"
+                  data-error="brand"></small></label><label class="field"><span>Categoría *</span><select
+                  name="category" id="field-category" required>
+                  <option value="">Selecciona una categoría</option>
+                  <option>Caballero</option>
+                  <option>Dama</option>
+                  <option>Unisex</option>
+                  <option>Sets</option>
+                </select><small class="field-error-text" data-error="category"></small></label><label
+                class="field"><span>Familia aromática</span><input name="aroma" id="field-aroma"
+                  placeholder="Ej. Cítrico y fresco"></label></div>
+          </div>
+          <div class="form-section">
+            <div class="section-number">03</div>
+            <div>
+              <h2>Precio e inventario</h2>
+              <p>Información de venta e inventario.</p>
+            </div>
+            <div class="form-grid"><label class="field"><span>Precio en COP *</span><input name="price" id="field-price"
+                  type="number" min="1" step="1" required><small class="field-error-text"
+                  data-error="price"></small></label><label class="field"><span>Unidades disponibles *</span><input
+                  name="stock" id="field-stock" type="number" min="0" step="1" required><small class="field-error-text"
+                  data-error="stock"></small></label><label class="field"><span>Stock mínimo *</span><input
+                  name="minStock" id="field-minStock" type="number" min="0" step="1" value="3" required><small
+                  class="field-error-text" data-error="minStock"></small></label><label
+                class="field full-field"><span>Descripción del perfume</span><textarea name="description"
+                  id="field-description" rows="3" placeholder="Describe brevemente la fragancia"></textarea></label>
+            </div>
+          </div>
+          <div class="form-actions"><button type="button" class="btn btn-secondary"
+              data-view="inventory">Cancelar</button><button type="submit" class="btn btn-primary"
+              id="save-product">Guardar perfume</button></div>
+          <p id="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+      <section class="view page" data-section="categories" hidden>
+        <div class="page-title">
+          <div><span class="eyebrow">ORGANIZACIÓN DEL CATÁLOGO</span>
+            <h1>Categorías</h1>
+            <p>Explora las colecciones de Herrera Perfumes.</p>
+          </div>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+      </section>
+      <section class="view page" data-section="detail" hidden><button class="back-link" data-view="inventory">← Volver
+          al inventario</button>
+        <div id="detail-content"></div>
+      </section>
+      <div class="toast" id="toast" role="status" hidden></div>
+      <div class="modal-backdrop" id="delete-modal" hidden>
+        <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><button class="modal-close"
+            id="modal-close" aria-label="Cerrar">×</button>
+          <div class="modal-icon">!</div><span class="eyebrow">CONFIRMACIÓN</span>
+          <h2 id="modal-title">¿Eliminar perfume?</h2>
+          <p id="modal-text">Esta acción solo afecta la vista actual.</p>
+          <div class="modal-actions"><button class="btn btn-secondary" id="cancel-delete">Cancelar</button><button
+              class="btn btn-danger" id="confirm-delete">Eliminar perfume</button></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+
+</html>

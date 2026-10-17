@@ -1,0 +1,16 @@
+const products = [
+{id:1,name:"Khamrah Lattafa",brand:"Lattafa",category:"Unisex",price:120000,stock:8,minStock:3,image:"khamrah.jpg",aroma:"Dulce y especiado",description:"Aromática y cálida, con notas dulces de canela, dátiles y vainilla."},
+{id:2,name:"Khamrah Qahwa Lattafa",brand:"Lattafa",category:"Unisex",price:120000,stock:3,minStock:3,image:"khamrah-qahwa.jpg",aroma:"Cálido y especiado",description:"Cálida y especiada, con notas de café, canela y vainilla."},
+{id:3,name:"Khamrah Dukhan Lattafa",brand:"Lattafa",category:"Unisex",price:120000,stock:6,minStock:3,image:"khamrah-dukhan.jpg",aroma:"Ahumado y especiado",description:"Intensa y ahumada, con notas especiadas, tabaco y vainilla."},
+{id:4,name:"Khamrah Waha Lattafa",brand:"Lattafa",category:"Unisex",price:110000,stock:0,minStock:3,image:"khamrah-waha.jpg",aroma:"Floral y afrutado",description:"Floral, verde y afrutado, de carácter radiante y moderno."},
+{id:5,name:"Odyssey Mandarin Sky",brand:"Armaf",category:"Caballero",price:110000,stock:12,minStock:3,image:"odyssey.jpg",aroma:"Cítrico y fresco",description:"Aroma cítrico y fresco de mandarina, luminoso y enérgico."},
+{id:6,name:"Jean Paul Gaultier Le Male Elixir",brand:"Jean Paul Gaultier",category:"Caballero",price:90000,stock:4,minStock:3,image:"le-male-elixir.jpg",aroma:"Amaderado y especiado",description:"Elixir amaderado y especiado, intenso y magnético."},
+{id:7,name:"1 Million Lucky",brand:"Paco Rabanne",category:"Caballero",price:100000,stock:9,minStock:3,image:"million-lucky.jpg",aroma:"Gourmand y frutal",description:"Notas gourmand y frutales con un toque avainillado."},
+{id:8,name:"Valentino Uomo Born in Roma",brand:"Valentino",category:"Caballero",price:75000,stock:7,minStock:3,image:"valentino.jpg",aroma:"Amaderado",description:"Fragancia amaderada con toques de avellana y cuero."},
+{id:9,name:"1 Million",brand:"Paco Rabanne",category:"Caballero",price:80000,stock:10,minStock:3,image:"million.jpg",aroma:"Especiado",description:"Clásico especiado con canela y cuero, audaz y lleno de carácter."},
+{id:10,name:"Paco Rabanne Invictus",brand:"Paco Rabanne",category:"Caballero",price:80000,stock:2,minStock:3,image:"invictus.jpg",aroma:"Fresco marino",description:"Fresco marino con toques de laurel y ámbar gris."},
+{id:11,name:"212 VIP Black",brand:"Carolina Herrera",category:"Caballero",price:75000,stock:5,minStock:3,image:"vip-black.jpg",aroma:"Oriental especiado",description:"Oriental especiado con café y cacao, intenso y perfecto para la noche."},
+{id:12,name:"Lattafa Art of Universe",brand:"Lattafa",category:"Caballero",price:130000,stock:0,minStock:3,image:"art-universe.jpg",aroma:"Ámbar especiado",description:"Composición ámbar-especiada envolvente."},
+{id:13,name:"Yara Lattafa",brand:"Lattafa",category:"Dama",price:100000,stock:11,minStock:3,image:"yara.jpg",aroma:"Dulce y cremoso",description:"Dulce, cremosa, con un aroma a vainilla, frutas y flores."},
+{id:14,name:"Yara Moi Lattafa",brand:"Lattafa",category:"Dama",price:100000,stock:4,minStock:3,image:"yara-moi.jpg",aroma:"Floral y frutal",description:"Notas florales, frutales y un delicado toque avainillado."}
+];
