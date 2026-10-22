@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del perfume · Herrera perfume</title>
+</head>
+<body>
+    
+    <a href="#contenido-principal">Volver al inicio</a>
+
+    <header>
+        <p>Herrera Perfume Manager</p>
+        <nav aria-label="principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="inventario.html">Inventario</a></li>
+                <li><a href="categorias.html">Categorias</a></li>
+                <li><a href="agregar.html">Agregar</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="contenido-principal">
+        <p><a href="inventario.html">Volver al inicio.</a></p>
+        <p id="detalle-error" role="alert" hidden>
+            ¡No encontramos este perfume! Pudo haber sido eliminado.
+        </p>
+
+        <article id="detalle-perfume">
+            <img id="detalle-perfume" src="" alt="" width="300" height="400">
+            <h1 id="detalle-nombre">Detalle del perfume</h1>
+            <p id="detalle-descripcion"></p>
+
+            <ul>
+                <dl>
+                    <div><dt>Marca</dt><dd id="detalle-marca"></dd></div>
+                    <div><dt>Categoria</dt><dd id="detalle-categoria"></dd></div>
+                    <div><dt>Familia aromatica</dt><dd id="detalle-aroma"></dd></div>
+                    <div><dt>Precio</dt><dd id="detalle-precio"></dd></div>
+                    <div><dt>Existencias</dt><dd id="detalle-stock"></dd></div>
+                    <div><dt>Estado</dt><dd id="detall-estado"></dd></div>
+                </dl>
+            </ul>
+
+            <p><a id="detalle-editar" href="agregar.html">Editar campos</a></p>
+        </article>
+    </main>
+
+    <footer>
+        <p>Herrera perfume · 2026</p>
+    </footer>
+</body>
+</html>
