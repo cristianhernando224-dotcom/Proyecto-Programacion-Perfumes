@@ -20,25 +20,71 @@
         </nav>
     </header>
    <main id="contenido-principal">
-        <section id="inicio.html" aria-labelledby="titulo-inicio">
-            <h2 id="titulo-inicio">Inicio</h2>
-            <p>Descubre y administra todo un catalogo de fragancias desde un solo lugar.</p>
+        <section aria-labelledby="titulo-portada">
+            <p>Gestion de fragancias | 2026</p>
+            <h1 id="titulo-portada">El arte de los perfumes</h1>
+            <p>Administra cada escencia, fragancia y cada producto de distintas marcas desde un mismo lugar.</p>
+            <p>
+                <a href="inventario.html">Ir al inventario</a>
+                <a href="agregar.html">Agregar nuevo producto</a>
+            </p>
         </section>
 
-        <section id="inventario.html" aria-labelledby="titulo-inventario">
-            <h2 id="titulo-inventario">Inventario de fragancias</h2>
-            <p>Tabla de productos</p>
+        <section aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Resumen general</h2>
+            <dl>
+                <div>
+                    <dt>Productos</dt>
+                    <dd id="resumen-productos">-</dd>
+                </div>
+                <div>
+                    <dt>Stock bajo</dt>
+                    <dd id="resumen-bajo-stock">-</dd>
+                </div>
+                <div>
+                    <dt>Categorias</dt>
+                    <dd id="resumen-categorias">-</dd>
+                </div>
+                <div>
+                    <dt>Inventario</dt>
+                    <dd id="resumen-inventario">-</dd>
+                </div>
+            </dl>
         </section>
 
-        <section id="categorias.html" aria-labelledby="titulo-categorias">
-            <h2 id="titulo-categorias">Categorias</h2>
-            <p>Formulario de categorias</p>
+        <section aria-labelledby="titulo-destacados">
+            <h2 id="titulo-destacados">Productos destacados</h2>
+            <p>Fragancias mas solicitadas del catalogo.</p>
+
+            <ul id="lista-destacados">
+                <!--TOca hablar con cristian sobre los elementos que apraceran aqui-->
+                <li>
+                    <article data-estado="disponible">
+                        <img src="img/catalog/khamrah.jpg"
+                        alt="frasco del perfume Khamrah Laffata"
+                        whidt="300" height="400" loading="lazy">
+                        <p>Laffata</p>
+                        <h3><a href="detalle.html?=1">Khamrah Laffata</a></h3>
+                        <p data value="120000">$120.000</p>
+                        <p>8 Unidades · <span>Disponible</span></p>
+                    </article>
+                </li>
+            </ul>
+
+            <p a href="inventario.html">Visualizar todos los productos.</p>
         </section>
 
-        <section id="agregar.html" aria-labelledby="titulo-agregar">
-            <h2 id="agregar">Agregar nuevo producto</h2>
-            <p>Formulario para agregar nuevos productos</p>
-        </section>
+        <template id="plantilla-tarjeta">
+            <li>
+                <article>
+                    <img src="" alt="" width="300" height="400" loading="lazy">
+                    <p data-campo="marca"></p>
+                    <h3><a href="#" data-campo="nombre"></a></h3>
+                    <p><data data-campo="precio"></data></p>
+                    <p><span data-campo="stock">·</span><span data-campo="estado"></span></p>
+                </article>
+            </li>
+        </template>
    </main> 
 
    <footer>
