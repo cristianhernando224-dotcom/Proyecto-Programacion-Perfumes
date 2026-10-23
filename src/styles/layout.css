@@ -1,0 +1,159 @@
+:root {
+    /*Cabecera y pie*/
+  --margen-lateral: max(var(--espacio-4), calc((100% - var(--ancho-maximo)) / 2));
+}
+
+/*Pie pegado abajo*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/*Cabecera*/
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-3) var(--espacio-5);
+  padding-block: var(--espacio-3);
+  padding-inline: var(--margen-lateral);
+  background: var(--color-tinta);
+  color: var(--color-blanco);
+}
+
+body > header > p {
+  margin: 0;
+  font-family: var(--fuente-titulo);
+  font-size: 1.125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-dorado-claro);
+}
+
+body > header :focus-visible {
+  outline-color: var(--color-dorado-claro);
+}
+
+/*Navegación*/
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding-inline: var(--espacio-3);
+  border-radius: var(--radio);
+  color: var(--color-texto-claro);
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: var(--color-fondo-hover);
+  color: var(--color-blanco);
+}
+
+nav a[aria-current="page"] {
+  color: var(--color-blanco);
+  box-shadow: inset 0 -3px 0 var(--color-dorado);
+}
+
+/* ---------- Pie ---------- */
+body > footer {
+  padding-block: var(--espacio-5);
+  padding-inline: var(--margen-lateral);
+  border-top: var(--borde);
+  font-size: 0.875rem;
+  color: var(--color-texto-suave);
+}
+
+body > footer p {
+  margin: 0;
+}
+
+/*Rejilla de tarjetas*/
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 12rem), 1fr));
+  gap: var(--espacio-4);
+  margin: 0 0 var(--espacio-6);
+  padding: 0;
+  list-style: none;
+}
+
+/*Estadísticas*/
+.estadisticas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--espacio-3);
+  margin-bottom: var(--espacio-6);
+}
+
+@media (min-width: 48rem) {
+  .estadisticas {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/*Filtros del inventario*/
+.filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--espacio-3);
+  align-items: end;
+  padding: var(--espacio-4);
+  background: var(--color-blanco);
+  border: var(--borde);
+  border-radius: var(--radio);
+}
+
+.filtros > div:first-child {
+  grid-column: 1 / -1;
+}
+
+/*Detalle del perfume*/
+.detalle {
+  display: grid;
+  gap: var(--espacio-2) var(--espacio-6);
+}
+
+.detalle > img {
+  width: 100%;
+  max-width: 20rem;
+  border-radius: var(--radio);
+}
+
+@media (min-width: 48rem) {
+  .detalle {
+    grid-template-columns: minmax(0, 18rem) minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .detalle > img {
+    grid-column: 1;
+    grid-row: 1 / span 5;
+  }
+
+  .detalle > :not(img) {
+    grid-column: 2;
+  }
+}
+
+/*Barra de acciones*/
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espacio-3);
+}
