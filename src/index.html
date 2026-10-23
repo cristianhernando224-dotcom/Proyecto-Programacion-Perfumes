@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap">
-<link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/componentes.css">
+    <link rel="stylesheet" href="styles/layout.css">
 </head>
 <body>
     <a class="enlace-regresar" href="#contenido-principal">Volver al inicio de la pagina</a>
@@ -25,19 +27,19 @@
         </nav>
     </header>
    <main id="contenido-principal">
-        <section aria-labelledby="titulo-portada">
+        <section class="portada" aria-labelledby="titulo-portada">
             <p>Gestion de fragancias | 2026</p>
             <h1 id="titulo-portada">El arte de los perfumes</h1>
             <p>Administra cada escencia, fragancia y cada producto de distintas marcas desde un mismo lugar.</p>
-            <p>
-                <a href="inventario.html">Ir al inventario</a>
-                <a href="agregar.html">Agregar nuevo producto</a>
+            <p class="acciones">
+                <a class="boton" href="inventario.html">Ir al inventario</a>
+                <a class="boton boton--secundario" href="agregar.html">Agregar nuevo perfume</a>
             </p>
         </section>
 
         <section aria-labelledby="titulo-resumen">
             <h2 id="titulo-resumen">Resumen general</h2>
-            <dl>
+            <dl class="estadisticas">
                 <div>
                     <dt>Productos</dt>
                     <dd id="resumen-productos">-</dd>
@@ -61,10 +63,10 @@
             <h2 id="titulo-destacados">Productos destacados</h2>
             <p>Fragancias mas solicitadas del catalogo.</p>
 
-            <ul id="lista-destacados">
-                <!--TOca hablar con cristian sobre los elementos que apraceran aqui-->
+            <ul class="rejilla" id="lista-destacados">
+                <!--Toca hablar con cristian sobre los elementos que apraceran aqui-->
                 <li>
-                    <article data-estado="disponible">
+                    <article class="tarjeta" data-estado="disponible">
                         <img src="img/catalog/khamrah.jpg"
                         alt="frasco del perfume Khamrah Laffata"
                         whidt="300" height="400" loading="lazy">
@@ -81,12 +83,12 @@
 
         <template id="plantilla-tarjeta">
             <li>
-                <article>
+                <article class="tarjeta">
                     <img src="data:," alt="" width="300" height="400" loading="lazy">
                     <p data-campo="marca"></p>
                     <h3><a href="#" data-campo="nombre"></a></h3>
                     <p><data data-campo="precio"></data></p>
-                    <p><span data-campo="stock">·</span><span data-campo="estado"></span></p>
+                    <p><span data-campo="stock">·</span><span class="estado" data-campo="estado"></span></p>
                 </article>
             </li>
         </template>

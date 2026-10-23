@@ -8,8 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap">
-    <link rel="stylesheet" href="base.css">
-</head>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/componentes.css">
+    <link rel="stylesheet" href="styles/layout.css"></head>
 <body>
     
     <a class="enlace-regresar" href="#contenido-principal">Volver al inicio de la pagina</a>
@@ -37,7 +38,7 @@
             <ul></ul>
         </div>
 
-        <form id="form-perfume" aria-labelledby="titulo-formulario">
+        <form id="form-perfume" class="class-formulario" aria-labelledby="titulo-formulario">
             <input type="hidden" id="perfume-id" name="id">
 
             <fieldset>
@@ -133,14 +134,14 @@
                 </div>
             </fieldset>
 
-            <p>
+            <p class="acciones">
                 <button type="submit" id="boton-guardar">Guardar perfume</button>
-                <a href="inventario.html">Cancelar</a>
+                <a class="boton boton--secundario" href="inventario.html">Cancelar</a>
             </p>
         </form>
     </main>
 
-    <div id="aviso" role="status"></div>
+    <div id="aviso" class="aviso" role="status"></div>
 
     <footer>
         <p>Herrera Perfumes · 2026</p>

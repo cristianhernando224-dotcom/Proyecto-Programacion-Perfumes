@@ -9,8 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap">
-<link rel="stylesheet" href="base.css">
-</head>
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/componentes.css">
+    <link rel="stylesheet" href="styles/layout.css"></head>
 <body>
   <a class="enlace-regresar" href="#contenido-principal">Volver al inicio de la pagina</a>
 
@@ -29,9 +30,9 @@
   <main id="contenido-principal">
     <h1>Inventario de perfumes</h1>
     <p>Consulta y administra los productos de Herrera Perfumes.</p>
-    <p><a href="agregar.html">Nuevo perfume</a></p>
+    <p><a class="boton" href="agregar.html">Nuevo perfume</a></p>
 
-    <form role="search" aria-label="Buscar y filtrar perfumes">
+    <form class="filtros" role="search" aria-label="Buscar y filtrar perfumes">
       <div>
         <label for="buscar">Buscar</label>
         <input id="buscar" name="buscar" type="search"
@@ -72,7 +73,7 @@
           <option value="stock">Stock</option>
         </select>
       </div>
-      <button type="reset">Limpiar filtros</button>
+      <button class="boton boton--secundario" type="reset">Limpiar filtros</button>
     </form>
 
     <p id="resumen-resultados" aria-live="polite"></p>
@@ -98,10 +99,10 @@
             <td>Unisex</td>
             <td><data value="120000">$120.000</data></td>
             <td>8</td>
-            <td>Disponible</td>
+            <td><span class="estado">Disponible</span></td>
             <td>
-              <a href="agregar.html?id=1" aria-label="Editar Khamrah Lattafa">Editar</a>
-              <button type="button" aria-label="Eliminar Khamrah Lattafa">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=1" aria-label="Editar Khamrah Lattafa">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Khamrah Lattafa">Eliminar</button>
             </td>
           </tr>
           <tr data-estado="stock-bajo">
@@ -109,10 +110,10 @@
             <td>Unisex</td>
             <td><data value="120000">$120.000</data></td>
             <td>3</td>
-            <td>Stock bajo</td>
+            <td><span class="estado">Stock bajo</span></td>
             <td>
-              <a href="agregar.html?id=2" aria-label="Editar Khamrah Qahwa Lattafa">Editar</a>
-              <button type="button" aria-label="Eliminar Khamrah Qahwa Lattafa">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=2" aria-label="Editar Khamrah Qahwa Lattafa">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Khamrah Qahwa Lattafa">Eliminar</button>
             </td>
           </tr>
           <tr data-estado="agotado">
@@ -120,10 +121,10 @@
             <td>Unisex</td>
             <td><data value="110000">$110.000</data></td>
             <td>0</td>
-            <td>Agotado</td>
+            <td><span class="estado">Agotado</span></td>
             <td>
-              <a href="agregar.html?id=4" aria-label="Editar Khamrah Waha Lattafa">Editar</a>
-              <button type="button" aria-label="Eliminar Khamrah Waha Lattafa">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=4" aria-label="Editar Khamrah Waha Lattafa">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Khamrah Waha Lattafa">Eliminar</button>
             </td>
           </tr>
           <tr data-estado="disponible">
@@ -131,10 +132,10 @@
             <td>Caballero</td>
             <td><data value="110000">$110.000</data></td>
             <td>12</td>
-            <td>Disponible</td>
+            <td><span class="estado">Disponible</span></td>
             <td>
-              <a href="agregar.html?id=5" aria-label="Editar Odyssey Mandarin Sky">Editar</a>
-              <button type="button" aria-label="Eliminar Odyssey Mandarin Sky">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=5" aria-label="Editar Odyssey Mandarin Sky">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Odyssey Mandarin Sky">Eliminar</button>
             </td>
           </tr>
           <tr data-estado="stock-bajo">
@@ -142,10 +143,10 @@
             <td>Caballero</td>
             <td><data value="80000">$80.000</data></td>
             <td>2</td>
-            <td>Stock bajo</td>
+            <td><span class="estado">Stock bajo</span></td>
             <td>
-              <a href="agregar.html?id=10" aria-label="Editar Paco Rabanne Invictus">Editar</a>
-              <button type="button" aria-label="Eliminar Paco Rabanne Invictus">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=10" aria-label="Editar Paco Rabanne Invictus">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Paco Rabanne Invictus">Eliminar</button>
             </td>
           </tr>
           <tr data-estado="disponible">
@@ -153,10 +154,10 @@
             <td>Dama</td>
             <td><data value="100000">$100.000</data></td>
             <td>11</td>
-            <td>Disponible</td>
+            <td><span class="estado">Disponible</span></td>
             <td>
-              <a href="agregar.html?id=13" aria-label="Editar Yara Lattafa">Editar</a>
-              <button type="button" aria-label="Eliminar Yara Lattafa">Eliminar</button>
+              <a class="boton boton--secundario boton--chico" href="agregar.html?id=13" aria-label="Editar Yara Lattafa">Editar</a>
+              <button type="button" class="boton boton--peligro boton--chico" aria-label="Eliminar Yara Lattafa">Eliminar</button>
             </td>
           </tr>
         </tbody>
@@ -194,7 +195,7 @@
     </dialog>
   </main>
 
-  <div id="aviso" role="status"></div>
+  <div id="aviso" class="aviso" role="status"></div>
 
   <footer>
     <p>Herrera Perfumes · 2026</p>
