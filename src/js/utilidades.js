@@ -21,16 +21,16 @@ function calcularEstado(perfume)
 { 
     if (perfume.stock === 0) return 'agotado'; 
     
-    if (perfume.stock <= perfume.stockMinimo) return 'stock-bajo'; 
+    if (perfume.stock <= (Number(perfume.stockMinimo) || 0)) return 'stock-bajo'; 
     
     return 'disponible'; 
 } 
 
 function rutaImagen(perfume) 
 { 
-    if (perfume.imagen.startsWith('data:')) return perfume.imagen; 
+    if (perfume.imagen && perfume.imagen.startsWith('data:')) return perfume.imagen; 
     
-    return 'img/catalog/' + perfume.imagen; 
+    return 'img/catalog/' + (perfume.imagen || IMAGEN_POR_DEFECTO); 
 } 
 
 let temporizadorAviso; function mostrarAviso(mensaje) 

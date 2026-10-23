@@ -28,7 +28,7 @@ function precargarPerfume(perfume) {
 	$('#perfume-id').value = perfume.id;
 	$('#nombre').value = perfume.nombre;
 	$('#marca').value = perfume.marca;
-	$('#categoria').value = perfume.categoria;
+	$('#categoria').value = perfume.categoria.toLowerCase();
 	$('#aroma').value = perfume.aroma;
 	$('#precio').value = perfume.precio;
 	$('#stock').value = perfume.stock;
@@ -143,9 +143,9 @@ formulario.addEventListener('submit', evento => {
     const datos = leerFormulario();  
     let guardado;  if (idEdicion) {    
         const actual = obtenerPerfume(idEdicion);    
-        guardado = actualizarPerfume(idEdicion, { ...datos, imagen: imagenElegida ?? actual.imagen });  
+        guardado = Boolean(actual && actualizarPerfume(idEdicion, { ...datos, imagen: imagenElegida ?? actual.imagen }));  
     } else {    
-        guardado = agregarPerfume({ ...datos, imagen: imagenElegida ?? IMAGEN_POR_DEFECTO });  
+        guardado = Boolean(agregarPerfume({ ...datos, imagen: imagenElegida ?? IMAGEN_POR_DEFECTO }));  
     }  
     
     if (!guardado) {    

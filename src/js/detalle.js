@@ -1,22 +1,27 @@
-'use strict'; 
+'use strict';
 
-const id = Number(new URLSearchParams(location.search).get('id')); 
-const perfume = obtenerPerfume(id); 
+const id = Number(new URLSearchParams(location.search).get('id'));
+const perfume = id > 0 ? obtenerPerfume(id) : null;
 
-// si no hay id, Number(null) es 0 y no existe 
+if (!perfume) {
+    $('#detalle-error').hidden = false;
+    $('#detalle-perfume').hidden = true;
+} else {
+    const estado = calcularEstado(perfume);
+    document.title = `${perfume.nombre} · Herrera Perfumes`;
+    $('#detalle-perfume').dataset.estado = estado;
 
-if (!perfume) 
-{
-    $('#detalle-error').hidden = false; 
-    $('#detalle-perfume').hidden = true; 
-} 
-else 
-    { 
-        const estado = calcularEstado(perfume); document.title = `${perfume.nombre} · Herrera Perfumes`; 
-        $('#detalle-perfume').dataset.estado = estado; const imagen = $('#detalle-imagen'); imagen.src = rutaImagen(perfume); imagen.alt = `Frasco del perfume ${perfume.nombre}`; 
-    } 
+    const imagen = $('#detalle-imagen');
+    imagen.src = rutaImagen(perfume);
+    imagen.alt = `Frasco del perfume ${perfume.nombre}`;
 
-$('#detalle-nombre').textContent = perfume.nombre; $('#detalle-descripcion').textContent = perfume.descripcion; 
-$('#detalle-marca').textContent = perfume.marca; $('#detalle-categoria').textContent = perfume.categoria; 
-$('#detalle-aroma').textContent = perfume.aroma; $('#detalle-precio').textContent = formatearPrecio(perfume.precio); 
-$('#detalle-stock').textContent = `${perfume.stock} unidades`; $('#detalle-estado').textContent = ETIQUETAS_ESTADO[estado]; $('#detalle-editar').href = `agregar.html?id=${perfume.id}`;
+    $('#detalle-nombre').textContent = perfume.nombre;
+    $('#detalle-descripcion').textContent = perfume.descripcion || 'Sin descripción disponible.';
+    $('#detalle-marca').textContent = perfume.marca;
+    $('#detalle-categoria').textContent = perfume.categoria;
+    $('#detalle-aroma').textContent = perfume.aroma || 'Sin especificar';
+    $('#detalle-precio').textContent = formatearPrecio(perfume.precio);
+    $('#detalle-stock').textContent = `${perfume.stock} unidades`;
+    $('#detalle-estado').textContent = ETIQUETAS_ESTADO[estado];
+    $('#detalle-editar').href = `agregar.html?id=${perfume.id}`;
+}

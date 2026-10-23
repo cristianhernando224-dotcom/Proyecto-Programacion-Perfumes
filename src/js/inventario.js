@@ -16,7 +16,7 @@ function filtrarPerfumes(perfumes, filtros)
     return perfumes.filter(p => {    
         const texto = `${p.nombre} ${p.marca} ${p.categoria}`.toLowerCase();    
         return (!filtros.texto || texto.includes(filtros.texto))      
-        && (!filtros.categoria || p.categoria === filtros.categoria)      
+        && (!filtros.categoria || p.categoria.toLowerCase() === filtros.categoria.toLowerCase())      
         && (!filtros.marca || p.marca === filtros.marca)      
         && (!filtros.estado || calcularEstado(p) === filtros.estado);
     }); 
