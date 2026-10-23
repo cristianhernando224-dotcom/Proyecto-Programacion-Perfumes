@@ -23,6 +23,77 @@
 
     <main id="contenido-principal">
         <h1>Agregar nuevo producto</h1>
+        <form id="formulario-perfume" enctype="multipart/form-data">
+            <section aria-labelledby="titulo-imagen">
+                <h2 id="titulo-imagen">Imagen del perfume</h2>
+                <p>Agrega una fotito del producto.</p>
+                <div>
+                    <label for="imagen">Subir imagen</label>
+                    <input id="imagen" name="imagen" type="file" accept="image/*">
+                </div>
+            </section>
+            
+            <section aria-labelledby="titulo-informacion">
+                <h2 id="titulo-informacion">Información básica</h2>
+                <p>Nombre, marca y clasificación del perfume.</p>
+                
+                <div>
+                    <label for="nombre">Nombre del perfume </label>
+                    <input id="nombre" name="nombre" type="text" required>
+                </div>
+                
+                <div>
+                    <label for="marca">Marca </label>
+                    <input id="marca" name="marca" type="text" required>
+                </div>
+                
+                <div>
+                    <label for="categoria">Categoría </label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="Caballero">Caballero</option>
+                        <option value="Dama">Dama</option>
+                        <option value="Unisex">Unisex</option>
+                        <option value="Sets">Sets</option>
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="familia">Familia aromática</label>
+                    <input id="familia" name="familia" type="text" placeholder="Ej. Cítrico y fresco">
+                </div>
+            </section>
+            
+            <section aria-labelledby="titulo-inventario">
+                <h2 id="titulo-inventario">Precio e inventario</h2>
+                <p>Información de venta e inventario.</p>
+                
+                <div>
+                    <label for="precio">Precio en COP </label>
+                    <input id="precio" name="precio" type="number" min="0" step="1" required>
+                </div>
+                
+                <div>
+                    <label for="unidades">Unidades disponibles </label>
+                    <input id="unidades" name="unidades" type="number" min="0" step="1" required>
+                </div>
+                
+                <div>
+                    <label for="stock-minimo">Stock mínimo </label>
+                    <input id="stock-minimo" name="stockMinimo" type="number" min="0" value="3" required >
+                </div>
+                
+                <div>
+                    <label for="descripcion">Descripción del perfume</label>
+                    <textarea id="descripcion" name="descripcion" rows="5" placeholder="Describe brevemente la fragancia"></textarea>
+                </div>
+             </section>
+             
+             <div>
+                <button type="reset">Cancelar</button>
+                <button type="submit">Guardar perfume</button>
+            </div>
+        </form>
         <!--formulario (aun no se que datos van aqui eso se habla con Cristian)-->
     </main>
 
