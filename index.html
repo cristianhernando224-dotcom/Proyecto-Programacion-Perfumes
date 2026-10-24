@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administrador de catalogo e invnetario de fragancias.">
+    <title>Herrera Perfumes Manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@500;600&display=swap">
+    <link rel="stylesheet" href="src/styles/base.css">
+    <link rel="stylesheet" href="src/styles/componentes.css">
+    <link rel="stylesheet" href="src/styles/layout.css">
+
+    <script src="src/js/datos.js" defer></script> 
+    <script src="src/js/utilidades.js" defer></script> 
+    <script src="src/js/almacen.js" defer></script> 
+    <script src="src/js/inicio.js" defer></script>
+</head>
+<body>
+    <a class="enlace-regresar" href="#contenido-principal">Volver al inicio de la pagina</a>
+    <header>
+        <h1>Herrera Perfumes Manager</h1>
+        <nav aria-label="Principal">
+             <ul>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="src/inventario.html">Inventario</a></li>
+                <li><a href="src/categorias.html">Categorias</a></li>
+                <li><a href="src/agregar.html">Agregar</a></li> 
+             </ul>
+        </nav>
+    </header>
+   <main id="contenido-principal">
+        <section class="portada" aria-labelledby="titulo-portada">
+            <p>Gestion de fragancias | 2026</p>
+            <h1 id="titulo-portada">El arte de los perfumes</h1>
+            <p>Administra cada escencia, fragancia y cada producto de distintas marcas desde un mismo lugar.</p>
+            <p class="acciones">
+                <a class="boton" href="inventario.html">Ir al inventario</a>
+                <a class="boton boton--secundario" href="agregar.html">Agregar nuevo perfume</a>
+            </p>
+        </section>
+
+        <section aria-labelledby="titulo-resumen">
+            <h2 id="titulo-resumen">Resumen general</h2>
+            <dl class="estadisticas">
+                <div>
+                    <dt>Productos</dt>
+                    <dd id="resumen-productos">-</dd>
+                </div>
+                <div>
+                    <dt>Stock bajo</dt>
+                    <dd id="resumen-bajo-stock">-</dd>
+                </div>
+                <div>
+                    <dt>Categorias</dt>
+                    <dd id="resumen-categorias">-</dd>
+                </div>
+                <div>
+                    <dt>Inventario</dt>
+                    <dd id="resumen-inventario">-</dd>
+                </div>
+            </dl>
+        </section>
+
+        <section aria-labelledby="titulo-destacados">
+            <h2 id="titulo-destacados">Productos destacados</h2>
+            <p>Fragancias mas solicitadas del catalogo.</p>
+
+            <ul class="rejilla" id="lista-destacados">
+                <!--Toca hablar con cristian sobre los elementos que apraceran aqui-->
+                <li>
+                    <article class="tarjeta" data-estado="disponible">
+                        <img src="img/catalog/khamrah.jpg"
+                        alt="frasco del perfume Khamrah Laffata"
+                        width="300" height="400" loading="lazy">
+                        <p>Laffata</p>
+                        <h3><a href="detalle.html?id=1">Khamrah Laffata</a></h3>
+                        <data value="120000">$120.000</data>
+                        <p>8 Unidades · <span class="estado">Disponible</span></p>
+                    </article>
+                </li>
+            </ul>
+
+            <p><a href="inventario.html">Visualizar todos los productos.</a></p>
+        </section>
+
+        <template id="plantilla-tarjeta">
+            <li>
+                <article class="tarjeta">
+                    <img src="data:," alt="" width="300" height="400" loading="lazy">
+                    <p data-campo="marca"></p>
+                    <h3><a href="#" data-campo="nombre"></a></h3>
+                    <p><data data-campo="precio"></data></p>
+                    <p><span data-campo="stock">·</span><span class="estado" data-campo="estado"></span></p>
+                </article>
+            </li>
+        </template>
+   </main> 
+
+   <footer>
+        <p>Perfumeria herrera · todos los derechos reservados</p>
+   </footer>
+</body>
+</html>
