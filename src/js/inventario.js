@@ -116,3 +116,23 @@ const categoriaEnUrl = new URLSearchParams(location.search).get('categoria');
 if (categoriaEnUrl) $('#filtro-categoria').value = categoriaEnUrl;
 pintarInventario();
 mostrarAvisoPendiente();
+
+const boton = document.getElementById("btnDetalles");
+
+boton.addEventListener("click", function () {
+    const producto = cargarPerfumes()[0];
+
+    if (!producto) {
+        alert("No hay productos en el inventario.");
+        return;
+    }
+
+    alert(
+        `Nombre: ${producto.nombre}\n` +
+        `Marca: ${producto.marca}\n` +
+        `Categoría: ${producto.categoria}\n` +
+        `Precio: ${formatearPrecio(producto.precio)}\n` +
+        `Stock: ${producto.stock}\n` +
+        `Estado: ${ETIQUETAS_ESTADO[calcularEstado(producto)]}`
+    );
+});
